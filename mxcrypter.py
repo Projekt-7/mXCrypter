@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import filedialog as fd
-
 from PIL import ImageTk, Image
 
 def new_file():
@@ -63,48 +62,37 @@ def file_save_decrypt():
             file.write(plan_text2.get(1.0, tk.END))
 
 def encryptCaesar():
-    print("Szyfruje cezara")
     zaszyfrowny = ""
     a = int(key_value_input.get("1.0",END))
-    print(a)
 
     b = str(plan_text_input.get("0.0", "end"))
-    print(b)
 
     for i in range(len(b)):
         if ord(b[i]) > 122 + a:
             zaszyfrowny += chr(ord(b[i]) + a - 26)
         else:
             zaszyfrowny += chr(ord(b[i]) + a)
-    #return zaszyfrowny[0:-1]
     ciphertext.insert(1.0, zaszyfrowny[0:-1])
 
 def decryptCaesar():
-    print("Deszyfruje cezara")
     zdeszyfrowny = ""
     a = int(key_value_input2.get("1.0", END))
-    print(a)
-
     b = str(encrypt_text.get("0.0", "end"))
-    print(b)
-
     for i in range(len(b)):
         if ord(b[i]) > 122 + a:
             zdeszyfrowny += chr(ord(b[i]) - a - 26)
         else:
             zdeszyfrowny += chr(ord(b[i]) - a)
     plan_text2.insert(1.0, zdeszyfrowny[0:-1])
-    #return zdeszyfrowny[0:-1]
 
 def encryptVerman():
-    print("Szyfruje Vernama")
     result = ""
     a = str(key_value_input.get("1.0", END))
-    print(a)
+
 
     b = str(plan_text_input.get("0.0", "end"))
-    print(b)
-    """ Returns the Vernam Cypher for given string and key """
+
+
     answer = ""
     p = 0
     for char in b:
@@ -115,13 +103,11 @@ def encryptVerman():
     ciphertext.insert(1.0, answer[0:-1])
 
 def decryptVerman():
-    print("Deszyfruje Vernama")
-    result = ""
     a = str(key_value_input2.get("1.0", END))
-    print(a)
+
 
     b = str(encrypt_text.get("0.0", "end"))
-    print(b)
+
     answer = ""
     p = 0
     for char in b:
@@ -132,35 +118,17 @@ def decryptVerman():
     plan_text2.insert(1.0, answer[0:-1])
 
 def encryptVigenere():
-    print("Szyfruje Vigenere")
-    #a = str(key_value_input.get("1.0", END))
-    #print(a)
-
-   # b = str(plan_text_input.get("0.0", "end"))
-    #print(b)
 
     alphabet = "abcdefghijklmnopqrstuvwxyz"
-    #input_string = ""
-    #enc_key = ""
+
     enc_string = ""
-
-    # Takes encrpytion key from user
-    #enc_key = input("Please enter encryption key: ")
     enc_key = str(key_value_input.get("1.0", END)).lower()
-
-    # Takes string from user
-    #input_string = input("Please enter a string of text: ")
     input_string = str(plan_text_input.get("0.0", "end")).lower()
-
-    # Lengths of input_string
     string_length = len(input_string)
-
-    # Expands the encryption key to make it longer than the inputted string
     expanded_key = enc_key
     expanded_key_length = len(expanded_key)
 
     while expanded_key_length < string_length:
-        # Adds another repetition of the encryption key
         expanded_key = expanded_key + enc_key
         expanded_key_length = len(expanded_key)
 
@@ -168,13 +136,10 @@ def encryptVigenere():
 
     for letter in input_string:
         if letter in alphabet:
-            # cycles through each letter to find it's numeric position in the alphabet
             position = alphabet.find(letter)
-            # moves along key and finds the characters value
             key_character = expanded_key[key_position]
             key_character_position = alphabet.find(key_character)
             key_position = key_position + 1
-            # changes the original of the input string character
             new_position = position + key_character_position
             if new_position > 26:
                 new_position = new_position - 26
@@ -184,14 +149,12 @@ def encryptVigenere():
             enc_string = enc_string + letter
 
     ciphertext.insert(1.0, enc_string)
-#https://www.geeksforgeeks.org/vigenere-cipher/
 def decryptVigenere():
-    print("Deszyfruje Vigenere")
     a = str(key_value_input2.get("1.0", END))
-    print(a)
+
 
     b = str(encrypt_text.get("0.0", "end"))
-    print(b)
+
 
     key_length = len(a)
     key_as_int = [ord(i) for i in a]
@@ -202,7 +165,6 @@ def decryptVigenere():
         plaintextver += chr(value + 65)
 
     plan_text2.insert(1.0, plaintextver)
-    #return plaintextver
 
 def selectCaesar():
     encrypt_button.configure(command=encryptCaesar)
@@ -227,29 +189,25 @@ def selectVigenere():
     button3.configure(state=DISABLED)
 
 root = Tk(className='mXCrypter')
-
 root.configure(bg="black")
 root.geometry("1280x720")
 root.resizable(False, False)
 
+# Należy podmienić ścieżke do loga programu w 237 i 238 linijce
+
 p1 = PhotoImage(file='C:\\Users\\Mateusz\\Desktop\\mXCrypter\\logo.png')
-#p1 = PhotoImage(file='logo.png')
-# Setting icon of master window
+logo_path = "C:\\Users\\Mateusz\\Desktop\\mXCrypter\\logo.png"
+
 root.iconphoto(False, p1)
 
 menubar = Menu(root)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Nowy", command=new_file)
-#filemenu.add_command(label="Otwórz...", command=open_file)
 
 submenu = Menu(filemenu, tearoff=0)
 filemenu.add_cascade(label='Otwórz...', menu=submenu)
 submenu.add_command(label="Szyfrowanie", command=open_file_encrypt)
 submenu.add_command(label="Dezzyfrowanie", command=open_file_decrypt)
-
-
-
-#filemenu.add_command(label="Zapisz ...", command=file_save)
 
 submenu2 = Menu(filemenu, tearoff=0)
 filemenu.add_cascade(label='Zapisz...', menu=submenu2)
@@ -266,17 +224,9 @@ algochoosemenu.add_radiobutton(label="Szyfr Vernama", command=selectVernam)
 algochoosemenu.add_radiobutton(label="Szyfr Vigenere'a", command=selectVigenere)
 menubar.add_cascade(label="Algorytm", menu=algochoosemenu)
 
-helpp = Menu(menubar, tearoff=0)
-helpp.add_command(label="Instrukcja obsługi", command="donothing")
-helpp.add_separator()
-helpp.add_command(label="O programie...", command="donothing")
-
-menubar.add_cascade(label="Pomoc", menu=helpp)
-
 frame1 = Frame(root, height=100, bg="black")
 frame1.pack(fill=BOTH, side=LEFT, expand=True)
 
-logo_path = "C:\\Users\\Mateusz\\Desktop\\mXCrypter\\logo.png"
 img = ImageTk.PhotoImage(Image.open(logo_path))
 
 panelleft = Label(frame1, image=img)
