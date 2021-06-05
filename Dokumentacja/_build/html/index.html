@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to Dokumentacja mXCrypter! &#8212; DOC 1.0.1 - dokumentacja</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="nav-item nav-item-0"><a href="#">DOC 1.0.1 - dokumentacja</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to Dokumentacja mXCrypter!</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="welcome-to-dokumentacja-mxcrypter">
+<h1>Welcome to Dokumentacja mXCrypter!<a class="headerlink" href="#welcome-to-dokumentacja-mxcrypter" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p><strong>Witamy w dokumentacji naszego programu :)</strong></p>
+<section id="o-programie">
+<h2>O programie<a class="headerlink" href="#o-programie" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<ul class="simple">
+<li><p><strong>mXCrypter jest programem szufrujacym w trzech szyfrach:</strong></p></li>
+<li><p>Szyfr Cezara,</p></li>
+<li><p>Szyfr Vermana,</p></li>
+<li><p>Szyfr Vigenere.</p></li>
+</ul>
+</section>
+<section id="jak-zainstalowac">
+<h2>Jak zainstalować?<a class="headerlink" href="#jak-zainstalowac" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Aby uruchomić nasz program wystaczy:</strong></p></li>
+<li><ol class="arabic simple">
+<li><p><em>Skopjować kod programu do swojego IDE,</em></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p><em>Zamienić scieżkę do loga programu, która znajduje się w linijce programu 235 i 236,</em></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p><em>Uruchomić program.</em></p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="jak-uzywac">
+<h2>Jak używać?<a class="headerlink" href="#jak-uzywac" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Aby użyć naszego programu wytsarczy wybrać szyfr który chcemy użyć, następnie cyfre szyfru i wpisać szyfr, nasz tekst zostanie zaszyfrowany lub odszyfrowany.</p>
+</section>
+<section id="schemat-blokowy-kodu">
+<h2>Schemat blokowy kodu<a class="headerlink" href="#schemat-blokowy-kodu" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<figure class="align-default">
+<img alt="_images/zdjecie11.png" src="_images/zdjecie11.png" />
+</figure>
+</section>
+<section id="przykladowe-kody">
+<h2>Przykładowe kody<a class="headerlink" href="#przykladowe-kody" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">open_file_encrypt():</span></code></p>
+<blockquote>
+<div><p><em>#wywołanie okna dialogowego open file</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">file_save_encrypt():</span></code></p>
+<blockquote>
+<div><p><em>#wywołanie okna dialogowego save file</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">menubar</span> <span class="pre">=</span> <span class="pre">Menu(root)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filemenu</span> <span class="pre">=</span> <span class="pre">Menu(menubar,</span> <span class="pre">tearoff=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filemenu.add_command(label=&quot;Nowy&quot;,</span> <span class="pre">command=new_file)</span></code></p>
+<blockquote>
+<div><p><em>#stworzenie menu programu</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button1</span> <span class="pre">=</span> <span class="pre">tk.Button(root,</span> <span class="pre">text='Szyfr</span> <span class="pre">Cezara',</span> <span class="pre">height=2,</span> <span class="pre">width=25,</span> <span class="pre">fg=&quot;#ffffff&quot;,bd</span> <span class="pre">=</span> <span class="pre">5,</span> <span class="pre">bg=&quot;#ff7f00&quot;,</span> <span class="pre">font=&quot;Arial</span> <span class="pre">10</span> <span class="pre">bold&quot;,</span> <span class="pre">command=selectCaesar)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button1.place(x=40,</span> <span class="pre">y=200)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">button1.pack</span></code></p>
+<blockquote>
+<div><p><em>#ustawienie przycisków: kolor, rozmiar, nazwa, położenie</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submenu</span> <span class="pre">=</span> <span class="pre">Menu(filemenu,</span> <span class="pre">tearoff=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filemenu.add_cascade(label='Otwórz...',</span> <span class="pre">menu=submenu)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submenu.add_command(label=&quot;Szyfrowanie&quot;,</span> <span class="pre">command=open_file_encrypt)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submenu.add_command(label=&quot;Dezzyfrowanie&quot;,</span> <span class="pre">command=open_file_decrypt)</span></code></p>
+<blockquote>
+<div><p><em>#filemenu.add_command(label=”Otwórz…”, command=open_file), funkcja otwórz plik</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submenu2</span> <span class="pre">=</span> <span class="pre">Menu(filemenu,</span> <span class="pre">tearoff=0)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filemenu.add_cascade(label='Zapisz...',</span> <span class="pre">menu=submenu2)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submenu2.add_command(label=&quot;Szyfrowanie&quot;,</span> <span class="pre">command=file_save_encrypt)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submenu2.add_command(label=&quot;Dezzyfrowanie&quot;,</span> <span class="pre">command=file_save_decrypt)</span></code></p>
+<blockquote>
+<div><p><em>#filemenu.add_command(label=”Zapisz …”, command=file_save), funkcja zapisz plik</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filemenu.add_separator()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filemenu.add_command(label=&quot;Zamknij&quot;,</span> <span class="pre">command=root.quit)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">menubar.add_cascade(label=&quot;Plik&quot;,</span> <span class="pre">menu=filemenu)</span></code></p>
+<blockquote>
+<div><p><em>#funkcja zamknij plik</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">selectCaesar():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">selectVernam():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">selectVigenere():</span></code></p>
+<blockquote>
+<div><p><em>#wybranie wybranego szyfu</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">encryptCaesar():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">decryptCaesar():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">encryptVerman():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">decryptVerman():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">encryptVigenere():</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">decryptVigenere():</span></code></p>
+<blockquote>
+<div><p><em>#zdefiniowanie funkcji szyfrujących i deszyfrujących</em></p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root.configure(bg=&quot;black&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root.geometry(&quot;1280x720&quot;)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root.resizable(False,</span> <span class="pre">False)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">p1</span> <span class="pre">=</span> <span class="pre">PhotoImage(file='C:\\Users\\Matusz\\PycharmProjects\\mXCrypter\\Images\\logo.png')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#p1</span> <span class="pre">=</span> <span class="pre">PhotoImage(file='logo.png')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">Setting</span> <span class="pre">icon</span> <span class="pre">of</span> <span class="pre">master</span> <span class="pre">window</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root.iconphoto(False,</span> <span class="pre">p1)</span></code></p>
+<blockquote>
+<div><p><em>#ustawienie tła i loga</em></p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to Dokumentacja mXCrypter!</a><ul>
+<li><a class="reference internal" href="#o-programie">O programie</a></li>
+<li><a class="reference internal" href="#jak-zainstalowac">Jak zainstalować?</a></li>
+<li><a class="reference internal" href="#jak-uzywac">Jak używać?</a></li>
+<li><a class="reference internal" href="#schemat-blokowy-kodu">Schemat blokowy kodu</a></li>
+<li><a class="reference internal" href="#przykladowe-kody">Przykładowe kody</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>Ta strona</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Pokaż źródło</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Szybkie wyszukiwanie</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Szukaj" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="nav-item nav-item-0"><a href="#">DOC 1.0.1 - dokumentacja</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Welcome to Dokumentacja mXCrypter!</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, SJM.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>
